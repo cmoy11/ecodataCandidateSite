@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 
 header {
     background-color: #E1EFA9;
@@ -15,10 +16,6 @@ h1 {
     font-size: 4vh;
 }
 
-/* nav {
-    width: 30%;
-} */
-
 ul {
     display: flex;
     flex-direction: column;
@@ -31,11 +28,52 @@ a {
     text-decoration: none;
     font-weight: lighter;
     padding: 1vh;
-    border-radius: 15%;
+    border-radius: 10%;
 }
 
 a:hover {
     text-decoration: underline;
+}
+
+.profile_page {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 4vh;
+    row-gap: 4vh;
+    padding: 4vh; 
+}
+
+.profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 4vh;
+    background-color: lightblue;
+    border-radius: 5%;
+}
+
+.profile > h2 {
+    padding: 2vh 0;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+}
+
+.profile > h3 {
+    font-family: 'Open Sans', sans-serif;
+    font-style: italic;
+}
+
+img {
+    border-radius: 50%;
+    width: 100%;
+}
+
+main {
+    width: 100%;
+}
+
+li {
+    padding: 0.5vh 0;
 }
 
 @media screen and (width > 550px) {
@@ -52,6 +90,12 @@ a:hover {
         background-color: lightblue;
         text-decoration: none;
     }
+
+    .profile_page {
+        column-gap: 8vh;
+        row-gap: 8vh;
+        padding: 8vh;
+    }
 }
 
 @media screen and (width > 1000px) {
@@ -65,5 +109,9 @@ a:hover {
     
     nav {
         width: 35%;
+    }
+
+    .profile_page {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
     }
 }
