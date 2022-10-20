@@ -22,16 +22,25 @@ ul {
     align-items: space-around;
 }
 
-a {
+.intextLink {
+    font-family: 'Open Sans', sans-serif;
+    padding: none;
+}
+
+.intextLink:visited {
+    color: blue;
+}
+
+.navLink {
     font-family: 'Anton', sans-serif;
     color: #000;
     text-decoration: none;
     font-weight: lighter;
     padding: 1vh;
-    border-radius: 10%;
+    border-radius: 10px;
 }
 
-a:hover {
+.navLink:hover {
     text-decoration: underline;
 }
 
@@ -49,23 +58,28 @@ a:hover {
     align-items: center;
     padding: 4vh;
     background-color: lightblue;
-    border-radius: 5%;
+    border-radius: 10px;
+    border: 2px #000 solid;
 }
 
 .profile > h2 {
     padding: 2vh 0;
     font-family: 'Open Sans', sans-serif;
     font-weight: bold;
+    text-align: center;
 }
 
 .profile > h3 {
     font-family: 'Open Sans', sans-serif;
     font-style: italic;
+    text-align: center;
 }
 
 img {
     border-radius: 50%;
     width: 100%;
+    height: auto;
+    border: 2px #000 solid;
 }
 
 main {
@@ -74,6 +88,16 @@ main {
 
 li {
     padding: 0.5vh 0;
+}
+
+.about {
+    font-family: 'Open Sans', sans-serif;
+    margin: 4vh;
+    padding: 4vh;
+    border: 2px #000 solid;
+    background-color: lightblue;
+    line-height: 1.8;
+    border-radius: 20px;
 }
 
 @media screen and (width > 550px) {
@@ -86,15 +110,21 @@ li {
         font-size: 5vh;
     }
 
-    a:hover {
+    .navLink:hover {
         background-color: lightblue;
         text-decoration: none;
+        border: 1px #000 solid;
     }
 
     .profile_page {
         column-gap: 8vh;
         row-gap: 8vh;
         padding: 8vh;
+    }
+
+    .about {
+        padding: 8vh;
+        margin: 8vh;
     }
 }
 
@@ -103,7 +133,7 @@ li {
         font-size: 8vh;
     }
 
-    a { 
+    .navLink { 
         font-size: 3vh;
     }
     
@@ -113,5 +143,9 @@ li {
 
     .profile_page {
         grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+
+    .about {
+        font-size: 3vh;
     }
 }
