@@ -46,3 +46,8 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+#rectangle{
+    width:200px;
+    height:100px;
+    background:blue;
+}
