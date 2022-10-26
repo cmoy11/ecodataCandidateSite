@@ -12,9 +12,6 @@
     <header>
         <h1>MICHIGAN ECODATA: CANDIDATE INFO</h1>
 
-        <div id="rectangle"></div>
-        <script type="module" src="graphic.js" charset="utf-8"></script>
-
         <nav>
             <ul tabindex="0">
                 <li><a href = "index.html" class="navLink">Map</a></li>
@@ -29,6 +26,12 @@
         <p>
             map page
         </p>
+        <figure>
+            {% include "src/graphic/ai2html-output/" + config.illustrator_output_filename ignore missing %}
+        </figure>
+        <div id="rectangle"></div>
+        <script type="module" src="graphic.js" charset="utf-8"></script>
+        
     </main>
 </body>
 </html>
