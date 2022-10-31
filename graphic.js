@@ -6,9 +6,11 @@ const div = d3.selectAll("div");
 
 // import mapData from "../data/map.json";
 const mapData = d3.json("../data/map.json");
+// import mapData from "../data/map.json";
 
 
 console.log(mapData);
+// console.log(ElecJson);
 
 const drawMap = async (ElecJson) => {
     // step 1: access data

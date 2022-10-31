@@ -24,17 +24,21 @@
 
     <main>
         <div class="grid-container">
-            <div class="grid child1">
+
+            <script type="module" src="graphic.js" charset="utf-8"></script>
+            <!-- <div class="grid child1">
                 {% include "src/graphic/ai2html-output/" + config.illustrator_output_filename ignore missing %} 
-            </div>
+            </div> -->
+            <img src="images/MichiganMap.png" alt="Map of Michigan US Congressional districts/">
+            <!-- !! could add a legend to the image, need to get rid of the circle-->
 
             <div class="grid child2">
                 <div id="rectangle" top: 10px>
-                    <h2>
+                    <h2 >
                         CURRENT DISTRICT: <br />
                     </h2>
-                    <h2>
-                        INSERT DISTRICT HERE
+                    <h2 id="h2">
+                        District 1 <br />
                     </h2>
                 </div>
                 <div>
@@ -47,8 +51,9 @@
                         <h4 style="color:darkblue">
 
                             <br />
-                            DEMOCRAT - CANDIDATE WEBSITE <br /> CANDIDATE NAME
+                            DEMOCRAT - CANDIDATE NAME
                         </h4>
+                        <url id="dem-site"> insert site link </url>
                         <h5> 
                             <br /> INSERT CANDIDATE PARAGRAPH HERE 
                         </h5>
@@ -58,19 +63,63 @@
                         <h4 style="color:darkred">
 
                             <br />
-                            REPUBLICAN - CANDIDATE WEBSITE <br /> CANDIDATE NAME
+                            REPUBLICAN - CANDIDATE NAME
                         </h4>
+                        <url id="dem-site"> insert site link </url>
                         <h5> 
                             <br /> INSERT CANDIDATE PARAGRAPH HERE 
                         </h5>
                     </div>
                 </div>
                 <div>
-                    <h3 style="font-size: 22px">
+                    <!-- <h3 style="font-size: 22px">
                         <br />INPUT YOUR DISTRICT NUMBER:
-                    </h3>
+                    </h3> -->
+                    <form>
+                        <label style="font-size: 22px" for="district-select"> INPUT YOUR DISTRICT NUMBER:</label>
+                        <select name="district-select" id="district-select">
+                            <option value="one">District 1</option>
+                            <option value="two">District 2</option>
+                            <option value="three">District 3</option>
+                            <option value="four">District 4</option>
+                            <option value="five">District 5</option>
+                            <option value="six">District 6</option>
+                            <option value="seven">District 7</option>
+                            <option value="eight">District 8</option>
+                            <option value="nine">District 9</option>
+                            <option value="ten">District 10</option>
+                            <option value="eleven">District 11</option>
+                            <option value="twelve">District 12</option>
+                            <option value="thirteen">District 13</option>
+                        </select>
+                        <button id="btn">Load new district</button>
+                    </form>
+                    <script>
+                        const input = document.querySelector('select#district-select');
+                        const btn = document.querySelector('button#btn');
+                        const candInfo = 
+                        [{district: 1, party: "Democrat", candidate: "John Doe", website: "www.johndoe.com", paragraph: "John Doe is a Democrat running for Michigan's 1st Congressional District. He is a former teacher and has been a member of the Michigan House of Representatives since 2018. He is running on a platform of education reform and healthcare for all."},
+                            {district: 1, party: "Republican", candidate: "Jane Doe", website: "www.janedoe.com", paragraph: "Jane Doe is a Republican running for Michigan's 2nd Congressional District. She is a former business owner and has been a member of the Michigan House of Representatives since 2018. She is running on a platform of tax reform and infrastructure investment."},}];
+                        btn.addEventListener('click', () => {
+                            event.preventDefault();
+                            // console.log(input.selectedIndex + 1);
+                            $district = input.selectedIndex + 1;
+                            document.getElementById("h2").innerHTML = "District " + $district;
+
+                            const demIndex = candInfo.findIndex((cand) => cand.district === $district && cand.party === "Democrat");
+                            document.getElementById("dem-name").innerHTML = "<br />DEMOCRAT - " + candInfo[demIndex].candidate;
+                            document.getElementById("dem-site").innerHTML = "<br /> <a href=" + candInfo[demIndex].website + "> " + candInfo[demIndex].website + "</a>";
+                            document.getElementById("dem-pg").innerHTML = "<br /> " + candInfo[demIndex].paragraph;
+
+                            const repIndex = candInfo.findIndex((cand) => cand.district === $district && cand.party === "Republican");
+                            document.getElementById("rep-name").innerHTML = "<br />REPUBLICAN - " + candInfo[repIndex].candidate;
+                            document.getElementById("rep-site").innerHTML = "<br /> <a href=" + candInfo[demIndex].website + "> " + candInfo[demIndex].website + "</a>";
+                            document.getElementById("rep-pg").innerHTML = "<br /> " + candInfo[repIndex].paragraph;
+                        });
+                    </script>
                     <h6>
-                        FIND YOUR DISTRICT NUMBER HERE (HYPERLINK)
+                        FIND YOUR DISTRICT NUMBER HERE:
+                        <a href="https://specials.michigandaily.com/2022/primary-election/#/voter-information">https://specials.michigandaily.com</a>
                     </h6>
                 </div>
                 <div>
@@ -80,30 +129,29 @@
                 </div>
                 <div class="col-container">
                     <div class="col">
-                        <h4 style="color:darkblue">
+                        <h4 id="dem-name" style="color:darkblue">
 
                             <br />
-                            DEMOCRAT - CANDIDATE WEBSITE <br /> CANDIDATE NAME
+                            DEMOCRAT - CANDIDATE NAME
                         </h4>
-                        <h5> 
+                        <url id="dem-site"> insert site link </url>
+                        <h5 id="dem-pg"> 
                             <br /> INSERT CANDIDATE PARAGRAPH HERE 
                         </h5>
                     </div>
 
                     <div class="col">
-                        <h4 style="color:darkred">
+                        <h4 id="rep-name" style="color:darkred">
 
                             <br />
-                            REPUBLICAN - CANDIDATE WEBSITE <br /> CANDIDATE NAME
+                            REPUBLICAN - CANDIDATE NAME
                         </h4>
-                        <h5> 
+                        <url id="rep-site"> insert site link </url>
+                        <h5 id="dem-pg"> 
                             <br /> INSERT CANDIDATE PARAGRAPH HERE 
                         </h5>
                     </div>
                 </div>
-
-
-            <script type="module" src="graphic.js" charset="utf-8"></script>
 
     </main>
 </body>
