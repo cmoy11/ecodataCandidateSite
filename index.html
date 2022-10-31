@@ -29,8 +29,10 @@
             <!-- <div class="grid child1">
                 {% include "src/graphic/ai2html-output/" + config.illustrator_output_filename ignore missing %} 
             </div> -->
-            <img src="images/MichiganMap.png" alt="Map of Michigan US Congressional districts/">
-            <!-- !! could add a legend to the image, need to get rid of the circle-->
+            <!-- <img src="images/MichiganMap.png" alt="Map of Michigan US Congressional districts/"> -->
+            <!-- !! could add a legend to the image-->
+            <!-- <div class="grid child1"></div> -->
+            <figure></figure>
 
             <div class="grid child2">
                 <div id="rectangle" top: 10px>
@@ -53,7 +55,7 @@
                             <br />
                             DEMOCRAT - CANDIDATE NAME
                         </h4>
-                        <url id="dem-site"> insert site link </url>
+                        <a href="www.google.com"> insert site link </a>
                         <h5> 
                             <br /> INSERT CANDIDATE PARAGRAPH HERE 
                         </h5>
@@ -65,7 +67,7 @@
                             <br />
                             REPUBLICAN - CANDIDATE NAME
                         </h4>
-                        <url id="dem-site"> insert site link </url>
+                        <a href="www.google.com"> insert site link </a>
                         <h5> 
                             <br /> INSERT CANDIDATE PARAGRAPH HERE 
                         </h5>
@@ -94,29 +96,7 @@
                         </select>
                         <button id="btn">Load new district</button>
                     </form>
-                    <script>
-                        const input = document.querySelector('select#district-select');
-                        const btn = document.querySelector('button#btn');
-                        const candInfo = 
-                        [{district: 1, party: "Democrat", candidate: "John Doe", website: "www.johndoe.com", paragraph: "John Doe is a Democrat running for Michigan's 1st Congressional District. He is a former teacher and has been a member of the Michigan House of Representatives since 2018. He is running on a platform of education reform and healthcare for all."},
-                            {district: 1, party: "Republican", candidate: "Jane Doe", website: "www.janedoe.com", paragraph: "Jane Doe is a Republican running for Michigan's 2nd Congressional District. She is a former business owner and has been a member of the Michigan House of Representatives since 2018. She is running on a platform of tax reform and infrastructure investment."},}];
-                        btn.addEventListener('click', () => {
-                            event.preventDefault();
-                            // console.log(input.selectedIndex + 1);
-                            $district = input.selectedIndex + 1;
-                            document.getElementById("h2").innerHTML = "District " + $district;
-
-                            const demIndex = candInfo.findIndex((cand) => cand.district === $district && cand.party === "Democrat");
-                            document.getElementById("dem-name").innerHTML = "<br />DEMOCRAT - " + candInfo[demIndex].candidate;
-                            document.getElementById("dem-site").innerHTML = "<br /> <a href=" + candInfo[demIndex].website + "> " + candInfo[demIndex].website + "</a>";
-                            document.getElementById("dem-pg").innerHTML = "<br /> " + candInfo[demIndex].paragraph;
-
-                            const repIndex = candInfo.findIndex((cand) => cand.district === $district && cand.party === "Republican");
-                            document.getElementById("rep-name").innerHTML = "<br />REPUBLICAN - " + candInfo[repIndex].candidate;
-                            document.getElementById("rep-site").innerHTML = "<br /> <a href=" + candInfo[demIndex].website + "> " + candInfo[demIndex].website + "</a>";
-                            document.getElementById("rep-pg").innerHTML = "<br /> " + candInfo[repIndex].paragraph;
-                        });
-                    </script>
+                    
                     <h6>
                         FIND YOUR DISTRICT NUMBER HERE:
                         <a href="https://specials.michigandaily.com/2022/primary-election/#/voter-information">https://specials.michigandaily.com</a>
@@ -134,7 +114,7 @@
                             <br />
                             DEMOCRAT - CANDIDATE NAME
                         </h4>
-                        <url id="dem-site"> insert site link </url>
+                        <a href="www.google.com" id="dem-site"> insert site link </a>
                         <h5 id="dem-pg"> 
                             <br /> INSERT CANDIDATE PARAGRAPH HERE 
                         </h5>
@@ -146,12 +126,278 @@
                             <br />
                             REPUBLICAN - CANDIDATE NAME
                         </h4>
-                        <url id="rep-site"> insert site link </url>
-                        <h5 id="dem-pg"> 
+                        <a href="www.google.com" id="rep-site"> insert site link </a>
+                        <h5 id="rep-pg"> 
                             <br /> INSERT CANDIDATE PARAGRAPH HERE 
                         </h5>
                     </div>
                 </div>
+
+                <script>
+                    const input = document.querySelector('select#district-select');
+                    const btn = document.querySelector('button#btn');
+                    const candInfo = 
+                        [
+                            {
+                                "candidate": "Bob Lorinser",
+                                "district": 1,
+                                "party": "Democrat",
+                                "type": "Other",
+                                "dailyBio": "Dr. Robert \"Bob\" Lorinser is running for election for the first time after two decades of working as a family physician and serving as the medical director of the Marquette County Health Department. Lorinser has expressed <a href=\"https://www.votedrbob.com/allaboutbob\">support</a> for universal healthcare and childcare.",
+                                "website": "https://www.votedrbob.com/",
+                                "paragraph": "Bob Lorinser is a proponent of renewable and carbon-free energy sources and hopes to achieve a 100% clean energy economy with net-zero emissions by 2050. He believes in addressing climate change and supports carbon fees to reduce greenhouse gas emissions. Lorinser supports various environmental protection acts such as the Clean Air Act, the Resource Conservation and Recovery Act, and the Safe Drinking Water Act."
+                            },
+                            {
+                                "candidate": "Jack Bergman",
+                                "district": 1,
+                                "party": "Republican",
+                                "type": "Incumbent",
+                                "dailyBio": "Bergman is a retired Marine Corps Lieutenant General and has represented the <a href=\"https://bergman.house.gov/\">1st District</a> since 2017. He signed an amicus brief for <a href=\"https://www.supremecourt.gov/DocketPDF/22/22O155/163403/20201210153048641_Texas%20v.%20Pennsylvania%20Amicus%20Brief%20of%20106%20Representatives.pdf\"><i>Texas v. Pennsylvania</i></a> to contest the results of the 2020 presidential election. ",
+                                "website": "https://bergman.house.gov/",
+                                "paragraph": "Jack Bergman is a member of the Conservative Climate Caucus, which focuses on climate policies that adhere to conservative values. The group believes in reducing emissions, not energy choices; they maintain that new technologies can help fossil fuels be part of the solution. The caucus does not support climate legislation affecting the economy and American workers.",
+                                "additionalSources": "https://curtis.house.gov/conservative-climate-caucus/"
+                            },
+                            {
+                                "candidate": "Jerry Hilliard ",
+                                "district": 2,
+                                "party": "Democrat",
+                                "type": "Other",
+                                "dailyBio": "<a href=\"https://jerryhilliard.com/\">Hilliard</a> previously worked in sales and management and taught economics courses in economics as a faculty member of Lansing Community College. Hilliard ran for the 4th District seat in 2018 but lost in the general election to Rep. Moolenaar.",
+                                "website": "https://jerryhilliard.com/",
+                                "paragraph": "Jerry Hilliard believes in blocking subsidies to all corporations that do not have a net positive environmental impact. He endorses the Oil & Water Don’t Mix campaign, which calls for discontinuing the Enbridge Line 5 Pipeline as a mode of gas transportation due to the danger of mass oil spills. "
+                            },
+                            {
+                                "candidate": "John Moolenaar",
+                                "district": 2,
+                                "party": "Republican",
+                                "type": "Incumbent",
+                                "dailyBio": "Moolenaar has represented Michigan's 4th District since 2015 and previously served on the state House and Senate. He was one of over 100 Republican representatives to sign an amicus brief in support of <a href=\"https://www.supremecourt.gov/DocketPDF/22/22O155/163403/20201210153048641_Texas%20v.%20Pennsylvania%20Amicus%20Brief%20of%20106%20Representatives.pdf\"><i>Texas v. Pennsylvania</i></a>, a lawsuit filed with the Supreme Court to contest the results of the 2020 presidential election.",
+                                "website": "http://moolenaar.house.gov/",
+                                "paragraph": "John Moolenaar is passionate about the Great Lakes Restoration Initiative, which has funded projects to improve water quality, fight invasive species, and counteract environmental harm to the lakes. He supports the Enbridge Line 5 Pipeline due to its provisions for more affordable energy."
+                            },
+                            {
+                                "candidate": "Hillary Scholten",
+                                "district": 3,
+                                "party": "Democrat",
+                                "type": "Other",
+                                "dailyBio": "<a href=\"https://hillaryscholten.com/meet-hillary/\">Scholten</a> is a former clerk for the U.S. Circuit Court of Appeals for the Second Circuit and worked as a Department of Justice Attorney under the Obama administration. Scholten ran for Michigan's 3rd District election in 2020 but was defeated by Rep. Peter Meijer.",
+                                "website": "https://hillaryscholten.com/",
+                                "paragraph": "Hillary Scholten considers herself a conservationist and is passionate about preserving and defending the Great Lakes. The League of Conservation Voters endorses her commitment to addressing Michigan’s water pollution crises and expanding the clean and renewable energy economy. Scholten believes in reducing dependence on fossil fuels and supports electric vehicle use.",
+                                "additionalSources": "https://www.lcv.org/article/lcv-action-fund-endorses-hillary-scholten-for-congress/ https://www.mlive.com/news/grand-rapids/2022/10/west-michigan-congressional-candidates-talk-health-care-jobs-energy-and-environment.html "
+                            },
+                            {
+                                "candidate": "John Gibbs",
+                                "district": 3,
+                                "party": "Republican",
+                                "type": "Other",
+                                "dailyBio": "Gibbs, a former software engineer and far-right political commentator, worked as an official for the U.S. Department of Housing and Urban Development under the Trump administration. He has been <a href=\"https://www.fox17online.com/news/politics/trump-endorses-primary-challenger-to-gop-rep-meijer\">endorsed</a> by former president Donald Trump.",
+                                "website": "https://www.votejohngibbs.com/",
+                                "paragraph": "John Gibbs believes that the most significant environmental concerns are the consolidation of American farmland ownership, the contamination of the food supply from toxic chemicals, and the effects of large-scale immigration on urban sprawl. He is against the Green New Deal as he maintains it is a false pretext to carry out underlying political agendas.",
+                                "additionalSources": "https://www.mlive.com/news/grand-rapids/2022/10/west-michigan-congressional-candidates-talk-health-care-jobs-energy-and-environment.html"
+                            },
+                            {
+                                "candidate": "Joseph Alfonso",
+                                "district": 4,
+                                "party": "Democrat",
+                                "website": "https://www.josephalfonsoforcongress.com/",
+                                "paragraph": "Joseph Alfonso is passionate about holding corporations accountable for water pollution."
+                            },
+                            {
+                                "candidate": "Bill Huizenga",
+                                "district": 4,
+                                "party": "Republican",
+                                "type": "Incumbent",
+                                "dailyBio": "Running uncontested in the Republican primary election, Huizenga has held office as the <a href=\"https://huizenga.house.gov/\">2nd District</a> representative in Congress since 2011. Huizenga signed the <a href=\"https://www.supremecourt.gov/DocketPDF/22/22O155/163403/20201210153048641_Texas%20v.%20Pennsylvania%20Amicus%20Brief%20of%20106%20Representatives.pdf\"><i>Texas v. Pennsylvania</i></a> amicus brief to challenge President Joe Biden's win over Donald Trump in the 2020 presidential election.",
+                                "website": "https://huizenga.house.gov",
+                                "paragraph": "Bill Huizenga is a proponent of the Great Lakes Restoration Initiative. He believes in strengthening the health of the lakes in ways that tap into their economic potential. Huizenga also supports an “all-of-the-above” energy strategy involving a mix of renewable and nonrenewable energy sources."
+                            },
+                            {
+                                "candidate": "Bart Goldberg",
+                                "district": 5,
+                                "party": "Democrat",
+                                "type": "Other",
+                                "dailyBio": "Goldberg, a New Buffalo-based attorney, is running on a campaign of pushing back against <a href=\"https://www.bart4mi.com/the-why\">extremism</a> and promoting \"common-sense solutions.\" ",
+                                "website": "https://www.bart4mi.com/the-why",
+                                "paragraph": "Bart Goldberg is passionate about preventing pollution to the Great Lakes and Michigan drinking water. He plans to focus specifically on bills regarding the chemical PFAS. Goldberg supports increased energy efficiency and wants to expand tax incentives for renewable energy.",
+                                "additionalSources": "https://www.mlive.com/news/jackson/2022/10/these-candidates-are-seeking-a-seat-in-congress-representing-jackson-calhoun-kalamazoo-counties.html"
+                            },
+                            {
+                                "candidate": "Tim Walberg ",
+                                "district": 5,
+                                "party": "Republican",
+                                "type": "Incumbent",
+                                "dailyBio": "Walberg has represented the <a href=\"https://walberg.house.gov/\">7th District</a> since 2011 and served on the Michigan House of Representatives from 1983 to 1998. In addition to signing the <a href=\"https://www.supremecourt.gov/DocketPDF/22/22O155/163403/20201210153048641_Texas%20v.%20Pennsylvania%20Amicus%20Brief%20of%20106%20Representatives.pdf\"><i>Texas v. Pennsylvania</i></a> amicus brief, Walberg voted <a href=\"https://www.huffpost.com/entry/gay-marriage-republicans-house_n_62d74240e4b081f3a8f8511f\">against</a> codifying the legalization of same-sex and interracial marriages. Former president Donald Trump has <a href=\"https://wtvbam.com/2022/07/20/364904/\">endorsed</a> Walberg in his bid for re-election.",
+                                "website": "https://walberg.house.gov/",
+                                "paragraph": "Tim Walberg is a member of the Conservative Climate Caucus, which focuses on climate policies that adhere to conservative values. The group believes in reducing emissions, not energy choices; they maintain that new technologies can help fossil fuels be part of the solution. The caucus does not support climate legislation affecting the economy and American workers. Walberg also supports the Keystone XL and Line 5 Pipelines, while opponents maintain there is a present danger of oil spills.",
+                                "additionalSources": "https://curtis.house.gov/conservative-climate-caucus/"
+                            },
+                            {
+                                "candidate": "Debbie Dingell ",
+                                "district": 6,
+                                "party": "Democrat",
+                                "type": "Incumbent",
+                                "dailyBio": "Dingell has served as the <a href=\"https://debbiedingell.house.gov/\">12th District</a> representative since 2015 after taking the seat left behind by her late husband John Dingell. Dingell currently represents the areas encompassing Ann Arbor, Ypsilanti and Western Detroit.",
+                                "website": "https://debbiedingell.house.gov/",
+                                "paragraph": "Debbie Dingell supports an economic shift to renewable energy to reduce greenhouse gas emissions to zero. She introduced the 100% Clean Economy Act to help the U.S. achieve net-zero carbon emissions by 2050. She also introduced the USA Electrify Forward Act to enhance the transition to electric vehicles. Dingell is a proponent of the National Environmental Policy Act."
+                            },
+                            {
+                                "candidate": "Whittney Williams ",
+                                "district": 6,
+                                "party": "Republican",
+                                "type": "Other",
+                                "dailyBio": "<a href=\"https://www.winwithwhittney.com/\">Williams</a> is a first-generation immigrant from Taiwan and previously worked as a marketing specialist in the automotive industry. In <a href=\"https://www.michiganradio.org/politics-government/2019-08-19/canton-republican-running-for-michigans-11th-congressional-district\">2020</a>, Williams ran for the 11th District seat but was defeated in the Republican primary.",
+                                "website": "https://www.winwithwhittney.com/"
+                            },
+                            {
+                                "candidate": "Elissa Slotkin ",
+                                "district": 7,
+                                "party": "Democrat",
+                                "type": "Incumbent",
+                                "dailyBio": "Rep. Slotkin, who was first elected to the <a href=\"https://slotkin.house.gov/\">8th District</a> in 2018, is a former CIA analyst and chair of the <a href=\"https://homeland.house.gov/subcommittees/intelligence-and-counterterrorism-117th-congress\">Subcommittee on Intelligence and Counterterrorism</a> in the House Committee on Homeland Security. In 2019, Slotkin co-authored a Washington Post <a href=\"https://www.washingtonpost.com/opinions/2019/09/24/seven-freshman-democrats-these-allegations-are-threat-all-we-have-sworn-protect/\">opinion piece</a> calling for an impeachment probe into allegations that former President Trump pressured Ukrainian President Zelensky to investigate the Bidens.",
+                                "website": "https://slotkin.house.gov/",
+                                "paragraph": "Elissa Slotkin is very focused on monitoring PFAS in the Michigan water supply and exploring safer alternatives to the chemical. She supports the Great Lakes Restoration Initiative and the development of clean and renewable energy, as she believes these will bring economic prosperity to Michigan.",
+                                "additionalSources": "https://elissaforcongress.com/priorities-3/preserving-our-environment/"
+                            },
+                            {
+                                "candidate": "Tom Barrett ",
+                                "district": 7,
+                                "party": "Republican",
+                                "type": "Other",
+                                "dailyBio": "Barrett is an Army veteran and current <a href=\"https://www.senatortombarrett.com/\">state senator</a> representing Michigan’s 24th District. In 2021, Barrett introduced <a href=\"http://www.legislature.mi.gov/(S(wwioho4cmosgys23b1ktkeou))/mileg.aspx?page=GetObject&objectname=2021-SB-0303\">Voter ID legislation</a> meant to \"deter fraud\" by tightening restrictions on voter identification and absentee ballot requirements. The legislation was passed by both chambers of the state legislature but ultimately <a href=\"https://www.michiganradio.org/politics-government/2021-10-29/whitmer-vetoes-voting-restrictions-adopted-by-gop-legislature\">vetoed</a> by Gov. Whitmer.",
+                                "website": "https://www.senatortombarrett.com/"
+                            },
+                            {
+                                "candidate": "Dan Kildee",
+                                "district": 8,
+                                "party": "Democrat",
+                                "type": "Incumbent",
+                                "dailyBio": "Kildee, a Flint native, first assumed office as the <a href=\"https://dankildee.house.gov/\">5th District</a> representative in 2013 and has advocated for investigations into the Flint water crisis and providing federal aid to impacted communities in Flint.",
+                                "website": "https://dankildee.house.gov/",
+                                "paragraph": "Dan Kildee helped create the Congressional PFAS Task Force to address the dangerous chemicals polluting the Michigan water supply. He supports the Great Lakes Restoration Initiative and opposes commercial fish farming as it increases pollution and harms the lakes' habitats. Kildee also believes in standing up against corporations such as Nestlé that cause net harm to natural resources."
+                            },
+                            {
+                                "candidate": "Paul Junge",
+                                "district": 8,
+                                "party": "Republican",
+                                "type": "Other",
+                                "dailyBio": "Junge served as a prosecutor in the Department of Homeland Security under the Trump administration at the ​​U.S. Citizenship and Immigration Services agency. According to his <a href=\"https://pauljunge.com/\">campaign website</a>, Junge is seeking to oppose tax increases and \"secure our borders\" by combatting illegal immigration.",
+                                "website": "https://pauljunge.com/"
+                            },
+                            {
+                                "candidate": "Brian Steven Jaye",
+                                "district": 9,
+                                "party": "Democrat",
+                                "type": "Other",
+                                "dailyBio": "<a href=\"https://www.brianjayeformichigan.com/meet_brian\">Jaye</a> owns a private practice legal firm in Rochester, MI and previously worked as a small business owner. He is also a former Democratic candidate for the Michigan Board of Education.",
+                                "website": "https://www.brianjayeformichigan.com",
+                                "paragraph": "Brian Jaye believes in consequences for corporate polluters, especially regarding the Great Lakes. He strongly supports the Green New Deal and renewable energy sources. Jaye is also passionate about legislation that will reduce dangerous chemicals such as PFAS in the water supply."
+                            },
+                            {
+                                "candidate": "Lisa McClain",
+                                "district": 9,
+                                "party": "Republican",
+                                "type": "Incumbent",
+                                "dailyBio": "McClain is seeking a second term in Congress after assuming office in the <a href=\"https://mcclain.house.gov/\">10th District</a> in 2021. During the Electoral College vote count on Jan. 6, 2021, McClain voted <a href=\"https://www.freep.com/story/news/politics/elections/2021/01/07/congress-approves-vote-for-biden/6577629002/\">against</a> certifying President Biden’s victory in the 2020 presidential election. At a Michigan Trump rally in April, McClain purported several <a href=\"https://www.cnn.com/2022/04/04/politics/fact-check-lisa-mcclain-trump-rally-bin-laden-unemployment-wars-biden/index.html\">false claims</a> regarding Trump's presidency.",
+                                "website": "https://mcclain.house.gov/",
+                                "paragraph": "Lisa McClain supports Michigan’s biofuel and natural gas industries. She believes private sector entrepreneurs should be in charge of cleaner energy research. McClain also supports the Keystone XL pipeline project, which opponents claim would have adverse environmental impacts."
+                            },
+                            {
+                                "candidate": "Carl Marlinga",
+                                "district": 10,
+                                "party": "Democrat",
+                                "type": "Other",
+                                "dailyBio": "Malinga is a <a href=\"https://www.usnews.com/news/best-states/michigan/articles/2022-03-07/ex-judge-prosecutor-carl-marlinga-running-for-congress\">retired</a> judge on the <a href=\"https://circuitcourt.macombgov.org/circuitcourt-CarlMarlinga\">16th Judicial Circuit Court</a> and the Macomb County Probate Court. Malinga previously served as Macomb County’s prosecuting attorney.",
+                                "website": "https://www.marlinga4congress.com/",
+                                "paragraph": "Carl Marlinga believes the Environmental Protection Agency needs to increase its commitment to cleaning the Great Lakes and calls for corporate pollution accountability. In addition, he pushes for the strengthening of clean energy and vehicle production."
+                            },
+                            {
+                                "candidate": "John James",
+                                "district": 10,
+                                "party": "Republican",
+                                "type": "Other",
+                                "dailyBio": "<a href=\"https://johnjamesmi.com/\">James</a> is a businessman and veteran who served in the Army from 2004 to 2012. James ran for the U.S. Senate in 2018 and 2020 but was defeated both times by Democratic senators Debbie Stabenow and Gary Peters. James <a href=\"https://www.freep.com/story/news/local/michigan/2020/11/05/peters-says-james-refusal-concede-election-pathetic/6180450002/\">refused</a> to concede for the three weeks following the 2020 general election, alleging election fraud.",
+                                "website": "https://johnjamesmi.com/"
+                            },
+                            {
+                                "candidate": "Haley Stevens",
+                                "district": 11,
+                                "party": "Democrat",
+                                "type": "Incumbent",
+                                "dailyBio": "Stevens currently represents Michigan's <a href=\"http://stevens.house.gov/\">11th District</a>, having first been elected in 2018. Stevens is staunchly pro-Israel and is <a href=\"https://www.detroitnews.com/story/news/politics/2022/07/15/michigan-congress-fundraising-hauls-primary-nears/10069717002/\">backed</a> by the <a href=\"https://www.theguardian.com/politics/2022/may/17/pro-israel-lobby-defeat-democrats-palestinians-2022\">American Israel Public Affairs Committee</a>, a powerful pro-Israel political lobbying committee.",
+                                "website": "http://stevens.house.gov/",
+                                "paragraph": "Haley Stevens believes the PFAS chemical is a major environmental crisis regarding air and water contamination and has introduced bills to address this. She also maintains that the U.S. needs to reach net-zero carbon emissions as quickly as possible.",
+                                "additionalSources": "https://stevens.house.gov/media/press-releases/reps-stevens-fitzpatrick-tlaib-posey-and-dingell-introduce-bipartisan-bill https://twitter.com/HaleyLive/status/1469771595803770887?s=20&t=Id387WfdL8lFsetwo4TeRw "
+                            },
+                            {
+                                "candidate": "Mark Ambrose",
+                                "district": 11,
+                                "party": "Republican",
+                                "type": "Other",
+                                "dailyBio": "<a href=\"https://wdet.org/2022/07/15/11th-congressional-district-inflation-border-relations-top-priorities-for-gop-candidate-mark-ambrose/\">Ambrose</a> is a Bloomfield Township native and an Army veteran. Ambrose has worked as a chartered financial analyst for over two decades.",
+                                "website": "https://voteambrose.com/"
+                            },
+                            {
+                                "candidate": "Rashida Tlaib",
+                                "district": 12,
+                                "party": "Democrat",
+                                "type": "Incumbent",
+                                "dailyBio": "First elected to the <a href=\"https://tlaib.house.gov/\">13th District</a> in 2019, Tlaib is the <a href=\"https://www.washingtonpost.com/politics/eight-minutes-with-the-president-rep-rashida-tlaib-the-lone-palestinian-american-in-congress-gains-relevance-in-israel-debate/2021/05/20/fe3139c6-b8c5-11eb-bb84-6b92dedcd8ed_story.html\">only Palestinian-American</a> currently serving in the House of Representatives. She is a member of the Democratic Socialists of America and a vocal critic of the Israeli government and U.S. aid to Israel, having expressed support for BDS and a one-state solution with a Palestinian majority.",
+                                "website": "https://tlaib.house.gov/",
+                                "paragraph": "The League of Conservation Voters endorses Rashida Tlaib for her pro-environmental positions. She is passionate about the right to clean and safe drinking water and believes in accountability for corporate pollution. Tlaib also supports increased research on the effects of fossil fuels and pushes for increased renewable energy funding.",
+                                "additionalSources": "https://www.lcv.org/article/lcv-action-fund-announces-first-round-of-incumbent-house-endorsements/ \nhttps://rashidaforcongress.com/issues/environmental-justice/ "
+                            },
+                            {
+                                "candidate": "Steven Elliott",
+                                "district": 12,
+                                "party": "Republican",
+                                "type": "Other",
+                                "dailyBio": "Elliott is a Marine Corps <a href=\"https://www.fox2detroit.com/video/1094217\">veteran</a> and businessman. He currently owns and operates a medical spa in Rochester, MI. ",
+                                "website": "https://stevenelliottforcongress.com/"
+                            },
+                            {
+                                "candidate": "Shri Thanedar",
+                                "district": 13,
+                                "party": "Democrat",
+                                "type": "Other",
+                                "dailyBio": "Thanedar currently represents the <a href=\"https://housedems.com/shri-thanedar/\">3rd District</a> in the Michigan House of Representatives. He was born and raised in India before moving to the U.S. in 1979. Thanedar ran as a <a href=\"https://www.detroitnews.com/story/news/local/michigan/2017/04/21/governor-candidate/100721428/\">gubernatorial candidate</a> in 2018 but was defeated by Gov. Gretchen Whitmer in the Democratic primary.",
+                                "website": "https://shriforcongress.com/",
+                                "paragraph": "The Flint water crisis inspired Shri Thanedar to run for office, and he is a proponent of the Green New Deal Pledge. He supports ending government subsidies for oil companies and is against the meager cost of extracting water from the Great Lakes. Thanedar is against the Enbridge Line 5 Pipeline as a mode of gas transportation due to the danger of mass oil spills."
+                            },
+                            {
+                                "candidate": "Martell D. Bivings",
+                                "district": 13,
+                                "party": "Republican",
+                                "type": "Other",
+                                "dailyBio": "Bivings is a former <a href=\"https://detroitmi.gov/node/39136\">business liaison</a> for Detroit City Council's District 4 and the sole candidate for the Republican primary in Michigan's District 13. His <a href=\"https://bivingsforcongress.com/issues\">campaign website</a> describes the economy, affordable Medicare and state infrastructure as key issues for his campaign. ",
+                                "website": "https://bivingsforcongress.com/",
+                                "paragraph": "Martell Bivings believes in protecting the Great Lakes from invasive species and pollution. He wants to address the meager cost for companies to extract water from the Great Lakes. Bivings currently does not support any federal policies on climate change as he thinks they will have adverse economic effects.",
+                                "additionalSources": "https://www.mlive.com/public-interest/2022/10/detroits-black-representation-in-limbo-as-thanedar-bivings-vie-for-mi-13-seat.html"
+                            }
+                        ]
+                    // Default info for the first district candidates
+                        document.getElementById("dem-name").innerHTML = "<br />DEMOCRAT - " + candInfo[0].candidate;
+                        document.getElementById("dem-site").innerHTML = "<br /> <a href=" + candInfo[0].website + "> " + candInfo[0].website + "</a>";
+                        document.getElementById("dem-pg").innerHTML = "<br /> " + candInfo[0].paragraph;
+                        document.getElementById("rep-name").innerHTML = "<br />REPUBLICAN - " + candInfo[1].candidate;
+                        document.getElementById("rep-site").innerHTML = "<br /> <a href=" + candInfo[1].website + "> " + candInfo[1].website + "</a>";
+                        document.getElementById("rep-pg").innerHTML = "<br /> " + candInfo[1].paragraph;
+                    btn.addEventListener('click', () => {
+                        event.preventDefault();
+                        // console.log(input.selectedIndex + 1);
+                        $district = input.selectedIndex + 1;
+                        document.getElementById("h2").innerHTML = "District " + $district;
+
+                        const demIndex = candInfo.findIndex((cand) => cand.district === $district && cand.party === "Democrat");
+                        document.getElementById("dem-name").innerHTML = "<br />DEMOCRAT - " + candInfo[demIndex].candidate;
+                        document.getElementById("dem-site").innerHTML = "<br /> <a href=" + candInfo[demIndex].website + "> " + candInfo[demIndex].website + "</a>";
+                        document.getElementById("dem-pg").innerHTML = "<br /> " + candInfo[demIndex].paragraph;
+
+                        const repIndex = candInfo.findIndex((cand) => cand.district === $district && cand.party === "Republican");
+                        document.getElementById("rep-name").innerHTML = "<br />REPUBLICAN - " + candInfo[repIndex].candidate;
+                        document.getElementById("rep-site").innerHTML = "<br /> <a href=" + candInfo[repIndex].website + "> " + candInfo[repIndex].website + "</a>";
+                        document.getElementById("rep-pg").innerHTML = "<br /> " + candInfo[repIndex].paragraph;
+                    });
+                </script>
 
     </main>
 </body>
