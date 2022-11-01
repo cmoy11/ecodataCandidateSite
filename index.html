@@ -55,7 +55,7 @@
                             <br />
                             DEMOCRAT - CANDIDATE NAME
                         </h4>
-                        <a href="www.google.com"> insert site link </a>
+                        <a class="candidate-site" href="www.google.com"> insert site link </a>
                         <h5> 
                             <br /> INSERT CANDIDATE PARAGRAPH HERE 
                         </h5>
@@ -67,7 +67,7 @@
                             <br />
                             REPUBLICAN - CANDIDATE NAME
                         </h4>
-                        <a href="www.google.com"> insert site link </a>
+                        <a class="candidate-site" href="www.google.com"> insert site link </a>
                         <h5> 
                             <br /> INSERT CANDIDATE PARAGRAPH HERE 
                         </h5>
@@ -114,7 +114,7 @@
                             <br />
                             DEMOCRAT - CANDIDATE NAME
                         </h4>
-                        <a href="www.google.com" id="dem-site"> insert site link </a>
+                        <a href="www.google.com" class="candidate-site" id="dem-site"> insert site link </a>
                         <h5 id="dem-pg"> 
                             <br /> INSERT CANDIDATE PARAGRAPH HERE 
                         </h5>
@@ -126,7 +126,7 @@
                             <br />
                             REPUBLICAN - CANDIDATE NAME
                         </h4>
-                        <a href="www.google.com" id="rep-site"> insert site link </a>
+                        <a href="www.google.com" class="candidate-site" id="rep-site"> insert site link </a>
                         <h5 id="rep-pg"> 
                             <br /> INSERT CANDIDATE PARAGRAPH HERE 
                         </h5>
@@ -376,10 +376,10 @@
                         ]
                     // Default info for the first district candidates
                         document.getElementById("dem-name").innerHTML = "<br />DEMOCRAT - " + candInfo[0].candidate;
-                        document.getElementById("dem-site").innerHTML = "<br /> <a href=" + candInfo[0].website + "> " + candInfo[0].website + "</a>";
+                        document.getElementById("dem-site").innerHTML = "<a href=" + candInfo[0].website + "> " + candInfo[0].website + "</a>";
                         document.getElementById("dem-pg").innerHTML = "<br /> " + candInfo[0].paragraph;
                         document.getElementById("rep-name").innerHTML = "<br />REPUBLICAN - " + candInfo[1].candidate;
-                        document.getElementById("rep-site").innerHTML = "<br /> <a href=" + candInfo[1].website + "> " + candInfo[1].website + "</a>";
+                        document.getElementById("rep-site").innerHTML = "<a href=" + candInfo[1].website + "> " + candInfo[1].website + "</a>";
                         document.getElementById("rep-pg").innerHTML = "<br /> " + candInfo[1].paragraph;
                     btn.addEventListener('click', () => {
                         event.preventDefault();
@@ -389,12 +389,12 @@
 
                         const demIndex = candInfo.findIndex((cand) => cand.district === $district && cand.party === "Democrat");
                         document.getElementById("dem-name").innerHTML = "<br />DEMOCRAT - " + candInfo[demIndex].candidate;
-                        document.getElementById("dem-site").innerHTML = "<br /> <a href=" + candInfo[demIndex].website + "> " + candInfo[demIndex].website + "</a>";
+                        document.getElementById("dem-site").innerHTML = "<a href=" + candInfo[demIndex].website + "> " + candInfo[demIndex].website + "</a>";
                         document.getElementById("dem-pg").innerHTML = "<br /> " + candInfo[demIndex].paragraph;
 
                         const repIndex = candInfo.findIndex((cand) => cand.district === $district && cand.party === "Republican");
                         document.getElementById("rep-name").innerHTML = "<br />REPUBLICAN - " + candInfo[repIndex].candidate;
-                        document.getElementById("rep-site").innerHTML = "<br /> <a href=" + candInfo[repIndex].website + "> " + candInfo[repIndex].website + "</a>";
+                        document.getElementById("rep-site").innerHTML = "<a href=" + candInfo[repIndex].website + "> " + candInfo[repIndex].website + "</a>";
                         document.getElementById("rep-pg").innerHTML = "<br /> " + candInfo[repIndex].paragraph;
                     });
                 </script>

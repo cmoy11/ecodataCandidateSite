@@ -24,7 +24,7 @@ header {
     opacity: 0;
     top: 0;
     left: 200;
-  }
+}
 
 h1 {
     font-family: 'Anton', sans-serif;
@@ -92,7 +92,7 @@ h6 {
     line-height: 1;
 }
 
-a {
+.candidate-site {
     font-family: 'Open Sans', sans-serif;
     font-size: 12px;
     font-weight: bold;
