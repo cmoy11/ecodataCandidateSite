@@ -53,11 +53,11 @@
                         <h4 style="color:darkblue">
 
                             <br />
-                            DEMOCRAT - CANDIDATE NAME
+                            DEMOCRAT - Gretchen Whitmer
                         </h4>
-                        <a class="candidate-site" href="www.google.com"> insert site link </a>
-                        <h5> 
-                            <br /> INSERT CANDIDATE PARAGRAPH HERE 
+                        <a href="https://www.michigan.gov/whitmer" class="candidate-site"> https://www.michigan.gov/whitmer </a>
+                        <h5 > 
+                            <br /> Gretchen Whitmer believes in removing the Enbridge Line 5 Pipeline from the Straits of Mackinac due to environmental concerns such as past oil spills. She has invested resources into water infrastructure, such as the development of the MI Clean Water Plan. She also wants a carbon-neutral economy by 2050.
                         </h5>
                     </div>
 
@@ -65,11 +65,11 @@
                         <h4 style="color:darkred">
 
                             <br />
-                            REPUBLICAN - CANDIDATE NAME
+                            REPUBLICAN - Tudor Dixon
                         </h4>
-                        <a class="candidate-site" href="www.google.com"> insert site link </a>
-                        <h5> 
-                            <br /> INSERT CANDIDATE PARAGRAPH HERE 
+                        <a href="https://www.tudordixon.com/" class="candidate-site"> https://www.tudordixon.com/ </a>
+                        <h5 > 
+                            <br /> Tudor Dixon strongly supports the Enbridge Line 5 Pipeline and maintains that the pipeline is a critical infrastructure that will help the Michigan economy. She believes Gretchen Whitmer has a “radical” energy agenda that will cause economic harm to Michigan.
                         </h5>
                     </div>
                 </div>
@@ -112,11 +112,11 @@
                         <h4 id="dem-name" style="color:darkblue">
 
                             <br />
-                            DEMOCRAT - CANDIDATE NAME
+                            DEMOCRAT - Gretchen Whitmer
                         </h4>
-                        <a href="www.google.com" class="candidate-site" id="dem-site"> insert site link </a>
+                        <a href="https://www.michigan.gov/whitmer" class="candidate-site" id="dem-site"> https://www.michigan.gov/whitmer </a>
                         <h5 id="dem-pg"> 
-                            <br /> INSERT CANDIDATE PARAGRAPH HERE 
+                            <br /> Gretchen Whitmer believes in removing the Enbridge Line 5 Pipeline from the Straits of Mackinac due to environmental concerns such as past oil spills. She has invested resources into water infrastructure, such as the development of the MI Clean Water Plan. She also wants a carbon-neutral economy by 2050.
                         </h5>
                     </div>
 
@@ -124,11 +124,11 @@
                         <h4 id="rep-name" style="color:darkred">
 
                             <br />
-                            REPUBLICAN - CANDIDATE NAME
+                            REPUBLICAN - Tudor Dixon
                         </h4>
-                        <a href="www.google.com" class="candidate-site" id="rep-site"> insert site link </a>
+                        <a href="https://www.tudordixon.com/" class="candidate-site" id="rep-site"> https://www.tudordixon.com/ </a>
                         <h5 id="rep-pg"> 
-                            <br /> INSERT CANDIDATE PARAGRAPH HERE 
+                            <br /> Tudor Dixon strongly supports the Enbridge Line 5 Pipeline and maintains that the pipeline is a critical infrastructure that will help the Michigan economy. She believes Gretchen Whitmer has a “radical” energy agenda that will cause economic harm to Michigan.
                         </h5>
                     </div>
                 </div>
@@ -137,7 +137,7 @@
                     const input = document.querySelector('select#district-select');
                     const btn = document.querySelector('button#btn');
                     const candInfo = 
-                        [
+                    [
                             {
                                 "candidate": "Bob Lorinser",
                                 "district": 1,
@@ -246,7 +246,9 @@
                                 "party": "Republican",
                                 "type": "Other",
                                 "dailyBio": "<a href=\"https://www.winwithwhittney.com/\">Williams</a> is a first-generation immigrant from Taiwan and previously worked as a marketing specialist in the automotive industry. In <a href=\"https://www.michiganradio.org/politics-government/2019-08-19/canton-republican-running-for-michigans-11th-congressional-district\">2020</a>, Williams ran for the 11th District seat but was defeated in the Republican primary.",
-                                "website": "https://www.winwithwhittney.com/"
+                                "website": "https://www.winwithwhittney.com/",
+                                "paragraph": "Whittney Williams is a self described veteran of the automotive and marketing industries working with companies such as Haworth, Jeep, Ford, Gardner White. In this election cycle she has led a very quiet campaign. Little is know on the specifics of her environment and energy positions. ",
+                                "potentialSources": "<- edit me"
                             },
                             {
                                 "candidate": "Elissa Slotkin ",
@@ -259,12 +261,15 @@
                                 "additionalSources": "https://elissaforcongress.com/priorities-3/preserving-our-environment/"
                             },
                             {
-                                "candidate": "Tom Barrett ",
+                                "candidate": "https://www.freep.com/story/news/politics/elections/2022/10/26/gretchen-whitmer-tudor-dixon-final-debate/69589524007/",
                                 "district": 7,
                                 "party": "Republican",
                                 "type": "Other",
                                 "dailyBio": "Barrett is an Army veteran and current <a href=\"https://www.senatortombarrett.com/\">state senator</a> representing Michigan’s 24th District. In 2021, Barrett introduced <a href=\"http://www.legislature.mi.gov/(S(wwioho4cmosgys23b1ktkeou))/mileg.aspx?page=GetObject&objectname=2021-SB-0303\">Voter ID legislation</a> meant to \"deter fraud\" by tightening restrictions on voter identification and absentee ballot requirements. The legislation was passed by both chambers of the state legislature but ultimately <a href=\"https://www.michiganradio.org/politics-government/2021-10-29/whitmer-vetoes-voting-restrictions-adopted-by-gop-legislature\">vetoed</a> by Gov. Whitmer.",
-                                "website": "https://www.senatortombarrett.com/"
+                                "website": "https://www.senatortombarrett.com/",
+                                "paragraph": "Tom Barrett originally ran for congress because he wanted to acheive energy independence, expand drilling, open pipelines, and make America less reliant on foreign oil. He recently supported SB 565 which would provide $4.7 billion in funding for environmental infrastructure including lead pipeline replacement, wastewater/stormwater updgrades, drinking water improvements, dam safety improvements, PFAS remediation, filters in drinking fountains, as well as investments to state parks. ",
+                                "additionalSources": "https://ballotpedia.org/Tom_Barrett_(Michigan)#cite_note-11\nhttps://michiganlcv.org/lawmaker/tom-barrett/",
+                                "potentialSources": "https://michiganlcv.org/lawmaker/tom-barrett/ https://www.conservatives4energy.org/tom-barrett"
                             },
                             {
                                 "candidate": "Dan Kildee",
@@ -281,7 +286,9 @@
                                 "party": "Republican",
                                 "type": "Other",
                                 "dailyBio": "Junge served as a prosecutor in the Department of Homeland Security under the Trump administration at the ​​U.S. Citizenship and Immigration Services agency. According to his <a href=\"https://pauljunge.com/\">campaign website</a>, Junge is seeking to oppose tax increases and \"secure our borders\" by combatting illegal immigration.",
-                                "website": "https://pauljunge.com/"
+                                "website": "https://pauljunge.com/",
+                                "paragraph": "Paul Junge believes in the private sector's ability to develop renewable energy sources and reduce carbon emissions. He does not want to see government regulations of the environment or energy that he believes may harm the economy or jobs. He believes it is important to protect the Great Lakes and would seek to keep the Great Lakes Restoration Initiative fully funded.",
+                                "potentialSources": "<- edit mine"
                             },
                             {
                                 "candidate": "Brian Steven Jaye",
@@ -316,7 +323,9 @@
                                 "party": "Republican",
                                 "type": "Other",
                                 "dailyBio": "<a href=\"https://johnjamesmi.com/\">James</a> is a businessman and veteran who served in the Army from 2004 to 2012. James ran for the U.S. Senate in 2018 and 2020 but was defeated both times by Democratic senators Debbie Stabenow and Gary Peters. James <a href=\"https://www.freep.com/story/news/local/michigan/2020/11/05/peters-says-james-refusal-concede-election-pathetic/6180450002/\">refused</a> to concede for the three weeks following the 2020 general election, alleging election fraud.",
-                                "website": "https://johnjamesmi.com/"
+                                "website": "https://johnjamesmi.com/",
+                                "paragraph": "John James is an advocate of American energy indepence. He has spoken out against Biden's reluctance to tap into oil reserves and expand drilling.",
+                                "potentialSources": "https://twitter.com/johnjamesmi <- I have a screenshot of the tweet as well"
                             },
                             {
                                 "candidate": "Haley Stevens",
@@ -334,7 +343,9 @@
                                 "party": "Republican",
                                 "type": "Other",
                                 "dailyBio": "<a href=\"https://wdet.org/2022/07/15/11th-congressional-district-inflation-border-relations-top-priorities-for-gop-candidate-mark-ambrose/\">Ambrose</a> is a Bloomfield Township native and an Army veteran. Ambrose has worked as a chartered financial analyst for over two decades.",
-                                "website": "https://voteambrose.com/"
+                                "website": "https://voteambrose.com/",
+                                "paragraph": "Mark Ambrose believes that there is an eventual necessity for Americans to use an alternative energy source, but currently is focused on combatting the rising prices of fuel. He agrees with increased drilling and regulations within the oil industry in order to alleviate this issue and acheive energy independence. ",
+                                "additionalSources": "https://wdet.org/2022/07/25/michigan-primary-2022-candidate-guide-11th-congressional-district/"
                             },
                             {
                                 "candidate": "Rashida Tlaib",
@@ -352,7 +363,9 @@
                                 "party": "Republican",
                                 "type": "Other",
                                 "dailyBio": "Elliott is a Marine Corps <a href=\"https://www.fox2detroit.com/video/1094217\">veteran</a> and businessman. He currently owns and operates a medical spa in Rochester, MI. ",
-                                "website": "https://stevenelliottforcongress.com/"
+                                "website": "https://stevenelliottforcongress.com/",
+                                "paragraph": "Steven Elliott neglected to provide questionnaire responses about environmental issues when asked by MLive. He referred such requests to his campaign website, which does not mention the issue.",
+                                "additionalSources": "https://www.mlive.com/public-interest/2022/10/tlaib-reelection-likely-in-mi-12-match-up-against-republican-tattoo-shop-owner.html"
                             },
                             {
                                 "candidate": "Shri Thanedar",
