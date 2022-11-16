@@ -50,7 +50,7 @@
                     </h3>
                 </div>
                 <div class="col-container">
-                    <div class="col">
+                    <div class="col winner">
                         <h4 style="color:darkblue">
 
                             <br />
@@ -109,7 +109,7 @@
                     </h3>
                 </div>
                 <div class="col-container">
-                    <div class="col">
+                    <div class="col" id="dem-house-cont">
                         <h4 id="dem-name" style="color:darkblue">
 
                             <br />
@@ -121,7 +121,7 @@
                         </h5>
                     </div>
 
-                    <div class="col">
+                    <div class="col winner" id="rep-house-cont">
                         <h4 id="rep-name" style="color:darkred">
 
                             <br />
@@ -262,7 +262,7 @@
                                 "additionalSources": "https://elissaforcongress.com/priorities-3/preserving-our-environment/"
                             },
                             {
-                                "candidate": "https://www.freep.com/story/news/politics/elections/2022/10/26/gretchen-whitmer-tudor-dixon-final-debate/69589524007/",
+                                "candidate": "Tom Barrett",
                                 "district": 7,
                                 "party": "Republican",
                                 "type": "Other",
@@ -410,6 +410,71 @@
                         document.getElementById("rep-name").innerHTML = "<br />REPUBLICAN - " + candInfo[repIndex].candidate;
                         document.getElementById("rep-site").innerHTML = "<a href=" + candInfo[repIndex].website + "> " + candInfo[repIndex].website + "</a>";
                         document.getElementById("rep-pg").innerHTML = "<br /> " + candInfo[repIndex].paragraph;
+
+                        if ($district ==  1) {
+                            document.getElementById("rep-house-cont").classList  = "col winner"
+                            document.getElementById("dem-house-cont").classList = "col"
+                        }
+
+                        if ($district ==  2) {
+                            document.getElementById("rep-house-cont").classList = "col winner"
+                            document.getElementById("dem-house-cont").classList = "col"
+                        }
+
+                        if ($district ==  3) {
+                            document.getElementById("dem-house-cont").classList = "col winner"
+                            document.getElementById("rep-house-cont").classList = "col"
+                        }
+
+                        if ($district ==  4) {
+                            document.getElementById("rep-house-cont").classList = "col winner"
+                            document.getElementById("dem-house-cont").classList = "col"
+                        }
+
+                        if ($district ==  5) {
+                            document.getElementById("rep-house-cont").classList = "col winner"
+                            document.getElementById("dem-house-cont").classList = "col"
+                        }
+
+                        if ($district ==  6) {
+                            document.getElementById("dem-house-cont").classList = "col winner"
+                            document.getElementById("rep-house-cont").classList = "col"
+                        }
+
+                        if ($district ==  7) {
+                            document.getElementById("dem-house-cont").classList = "col winner"
+                            document.getElementById("rep-house-cont").classList = "col"
+                        }
+
+                        if ($district ==  8) {
+                            document.getElementById("dem-house-cont").classList = "col winner"
+                            document.getElementById("rep-house-cont").classList = "col"
+                        }
+
+                        if ($district ==  9) {
+                            document.getElementById("rep-house-cont").classList = "col winner"
+                            document.getElementById("dem-house-cont").classList = "col"
+                        }
+
+                        if ($district ==  10) {
+                            document.getElementById("rep-house-cont").classList = "col winner"
+                            document.getElementById("dem-house-cont").classList = "col"
+                        }
+
+                        if ($district ==  11) {
+                            document.getElementById("dem-house-cont").classList = "col winner"
+                            document.getElementById("rep-house-cont").classList = "col"
+                        }
+
+                        if ($district ==  12) {
+                            document.getElementById("dem-house-cont").classList = "col winner"
+                            document.getElementById("rep-house-cont").classList = "col"
+                        }
+
+                        if ($district ==  13) {
+                            document.getElementById("dem-house-cont").classList = "col winner"
+                            document.getElementById("rep-house-cont").classList = "col"
+                        }
                     });
                 </script>
 
